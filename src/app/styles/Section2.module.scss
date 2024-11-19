@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap');
+.sectionList {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-family: "Lato",sans-serif;
+    line-height: 1.5;
+    margin: 0 auto;
+    width: 87%;
+    background: white;
+    padding-bottom: 20px;
+}
+
+.slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: "Lato",sans-serif;
+    margin: 0;
+    // background: azure;
+    background: white;
+    padding-bottom: 20px;
+}
+
+.imgSection {
+    width: 80%;
+    // max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    // padding-top: 20px;
+}
+.arrowLogo:hover  {
+    transform: scale(1.2);
+    width: 10px;
+    object-fit:cover;
+  }
+.prev, .next, .playPause {
+ 
+   
+        position: absolute;
+        top: 50%; /* Центрируем по вертикали */
+        transform: translateY(-50%); /* Корректируем смещение */
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 2; /* Стрелки поверх изображения */
+       
+  
+}
+
+.prev {
+    left: 10%;
+}
+
+.next {
+    right: 10%;
+}
+
+.playPause {
+    bottom: 10px;
+    top: auto;
+    transform: translateY(0);
+    margin-left: -30px;
+}
+
+
+.sectionTitle{
+    color: red;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Lato",sans-serif;
+    margin: 0;
+    // background: azure;
+    background: white;
+    padding-bottom: 20px;
+}
+.sectionP{
+    color: blue;
+    font-size: 20px;
+    font-family: "Lato",sans-serif;
+    margin: 0;
+    // background: azure;
+    background: white;
+    padding-bottom: 20px;
+    padding-left: 10%;
+}
+.highlight-text {
+    color: red;
+    font-size: 22px;
+    text-align: center;
+    display: flex;
+    font-family: "Lato",sans-serif;
+
+}
+.finalP-class {
+    // font-style: italic;
+    // color: #555;
+    line-height: 1.5;
+    font-family: "Lato",sans-serif;
+}
+
+.finalP{
+    font-family: "Lato",sans-serif;   
+    line-height: 1.5;
+    margin: 0 auto;
+    // background: azure;
+    background: white;
+    padding-bottom: 20px;
+    // padding-left: 2%;
+    width: 87%;
+
+}
+.highlightText{
+    font-family: "Lato",sans-serif;  
+    // padding-left: 5%;
+    color: blue;
+    font-size: 20px;
+}
+@media (min-width: 768px)  {
+    .sectionTitle{
+        font-size: 24px;
+    }
+    .sectionP {
+        font-size: 24px;
+    }
+    .sectionList li{
+        font-size: 18px;
+    }
+    .highlightText  {
+        font-size: 24px !important;
+    }
+    .finalP{
+        font-size: 18px;
+    }
+    .imgSection {
+        margin-top: 50px;
+        width: 50%;
+    }
+    .prev{
+        left: 26%;
+    }
+    .next{
+        right: 26%;
+    }
+}
+
+@media (min-width: 1024px)  {
+    .sectionTitle{
+        font-size: 32px;
+    }
+    .sectionP {
+        font-size: 30px;
+    }
+    .sectionList li{
+        font-size: 20px;
+    }
+    .highlightText  {
+        font-size: 30px !important;
+    }
+    .finalP{
+        font-size: 20px;
+    }
+    .imgSection {
+        margin-top: 50px;
+        width: 50%;
+    }
+    .prev{
+        left: 26%;
+    }
+    .next{
+        right: 26%;
+    }
+}

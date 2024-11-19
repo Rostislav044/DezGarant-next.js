@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
+.main {
+  width: 98%;
+  margin: 0 auto;
+  // background: azure;
+  background: white;
+   padding-top: 95px;
+}
+
+.sectionMainText {
+  text-align: center;
+  font-size: 20px;
+  padding-top: 20px;
+  color: blue;
+  font-family: "Lato", sans-serif;
+}
+
+  @media (min-width: 768px) {
+    .sectionMainText{
+    font-size: 26px;
+    padding-top: 60px;
+    margin: 0;
+  }
+  
+  
+  
+}
+
+.slogan {
+  color: brown;
+  font-size: 20px;
+  
+  text-align: center;
+  font-style: oblique;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    
+  }
+}
+
+.sectionDivImg {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 400px;
+  padding-bottom: 2px;
+
+
+
+  @media (min-width: 1024px) {
+    .sectionImg,
+    .sectionImg2,
+    .sectionImg4 {
+      width: 350px;
+      height: 400px;
+      display: block;
+      padding: 4px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  }
+  .slogan{
+    font-size: 32px;
+  }
+  .sectionMainText{
+    font-size: 32px;
+    padding-top: 75px;
+    margin: 0;
+  }
+}
+
+.sectionImg {
+  width: 80%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.sectionImg2,
+.sectionImg4 {
+  display: none;
+
+  @media (min-width: 1024px) {
+    display: block;
+  }
+}

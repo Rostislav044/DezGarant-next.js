@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap');
+
+.slideContainer {
+  font-family: "Lato",sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  // background: azure;
+  background: white;
+  margin: 0;
+    padding-bottom: 20px;
+}
+
+.slider {
+  position: relative; /* Контейнер для позиционирования стрелок */
+  width: 80%;
+  // max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center; /* Выравниваем по вертикали */
+  justify-content: center;
+}
+
+.image-container {
+  width: 100%;
+  position: relative;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Стили стрелок */
+.arrow {
+  position: absolute;
+  top: 50%; /* Центрируем по вертикали */
+  transform: translateY(-50%); /* Корректируем смещение */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 2; /* Стрелки поверх изображения */
+}
+
+/* Левая стрелка */
+.leftArrow {
+  left: 10px; /* Прижимаем к левому краю слайда */
+}
+
+/* Правая стрелка */
+.rightArrow {
+  right: 10px; /* Прижимаем к правому краю слайда */
+}
+
+.arrowLogo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+/* Анимация при наведении */
+.arrow:hover .arrowLogo {
+  transform: scale(1.2);
+  width: 10px;
+  object-fit:cover;
+}
+
+.slideTextH {
+  font-size: 20px;
+  text-align: center;
+  color: brown;
+  // color: blue;
+  margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.slideImg{
+  max-width: 100%;
+  object-fit: contain;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+  .slideTextH {
+    font-size: 23px;
+    margin-top: 2%;
+    margin-bottom: 10px;
+  }
+  .slideImg{
+    width: 80%;
+  }
+  .leftArrow{
+    margin-left: 20%;
+  }
+  .rightArrow{
+    margin-right: 20%;
+  }
+  .slideImg{
+    max-width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .slideTextH {
+    font-size: 32px;
+    margin-top: 3%;
+    margin-bottom: 15px;
+  }
+  .slideImg{
+    width: 80%;
+  }
+  .leftArrow{
+    margin-left: 20%;
+  }
+  .rightArrow{
+    margin-right: 20%;
+  }
+  .slideImg{
+    max-width: 60%;
+  }
+}

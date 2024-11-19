@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap');
+
+.headerContainer {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  position: fixed;
+  background-color: white;
+  // background: #e6e6fa;
+  margin-top: -8px;
+  width: 97%;
+  z-index: 1000;
+}
+
+.divLogotip {
+  
+  display: flex;
+  // background: white;
+  background: #e6e6fa;
+  justify-content: space-around;
+  
+}
+
+.aLogoTel {
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.logotip2 {
+  width: 60px;
+  height: 60px;
+  margin-top: 2%;
+  margin-left: -10px;
+}
+
+.logoTelefon {
+  width: 30px;
+  height: 30px;
+  margin-top: 9%;
+}
+
+.logoTelegram,
+.logoViber,
+.logoEmail {
+  width: 30px;
+  height: 30px;
+}
+
+.header__phone_p {
+  font-size: 17px;
+  padding-right: 5px;
+  padding-left: 3px;
+  padding-top: 4px;
+}
+
+.linkHom {
+  display: flex;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btnConsultation {
+
+
+position: relative;
+display: inline-block;
+padding: 5px;
+color: blue;
+
+border: none;
+cursor: pointer;
+background: linear-gradient(90deg, #ff7e5f, #feb47b, #ff7e5f);
+
+
+background-size: 300% 100%;
+border-radius: 5px;
+overflow: hidden;
+animation: backgroundMove 5s linear infinite alternate;
+}
+
+@keyframes backgroundMove {
+0% {
+    background-position: 0% 0;
+}
+
+100% {
+    background-position: 100% 0;
+}
+
+}
+
+.btnConsultationP {
+  font-size: 14px;
+  margin: 0px;
+  // text-shadow: 0px 0px 10px rgba(173, 216, 230, 0.8);
+  // text-shadow: 0px 0px 10px rgba(173, 216, 230, 0.5);
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.6);
+
+}
+
+.langContainer {
+  position: relative;
+  height: 23px;
+  background-color: transparent;
+  width: 34px;
+  right: 2%;
+}
+
+.lang {
+  font-size: 23px;
+  border: none;
+  color: blue;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: transparent;
+  margin-top: -9px;
+
+}
+
+.langIcon {
+  width: 10px;
+  height: 10px;
+  margin-left: 1px;
+}
+
+.languageOptions {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  z-index: 1000;
+  height: 23px;
+  background-color: transparent;
+  width: 45px;
+
+  button {
+    background-color: transparent;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    font-size: 22px;
+    margin-top: -9px;
+    margin-left: 2px;
+  }
+}
+
+.logoText {
+  margin: 0;
+  padding-top: 17px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #333;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  animation: fadeInText 2s ease-in-out;
+
+  &.smallFont {
+    font-size: 12px;
+  }
+}
+
+.LogoTextSpan {
+  font-weight: bold;
+  color: #ff4500;
+  font-size: 20px;
+  // margin-left: 2%;
+  text-transform: none;
+  background: linear-gradient(45deg, #ff4500, #ff9c00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.headerConsultation{
+  display: flex;
+  // background: white;
+  background: #e6e6fa;
+  justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+.logotel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoDiv3{
+  display: flex;
+  gap: 10px;
+}
+
+.comUaText {
+  color: green !important;  /* Убедитесь, что это правильный цвет */
+  font-style: italic;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+@media (min-width: 1024px) {
+  .header__phone_p {
+    font-size: 20px;
+    padding-top: 0;
+    padding-left: 5px;
+  }
+  .logoText{
+    font-size: 16px;
+  }
+  .LogoTextSpan{
+    font-size: 24px;
+  }
+  .comUaText{
+    font-size: 14px;
+  }
+  .btnConsultationP{
+    font-size: 20px;
+  }
+  .headerConsultation{
+    padding-bottom: 10px;
+  }
+  .lang
+  {
+    font-size: 30px;
+  }
+  .lang2 {
+    font-size: 30px !important;
+    margin-top: -1px !important;
+    
+  }
+  .logoDiv3{
+    gap: 20px;
+  }
+  .logoTelefon{
+    width: 35px;
+    height: 35px;
+  }
+  .logoTelegram,
+.logoViber,
+.logoEmail {
+  width: 35px;
+  height: 35px;
+}
+.divLogotip{
+  padding-bottom: 10px;
+}
+}
