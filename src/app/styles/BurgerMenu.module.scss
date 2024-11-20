@@ -1,6 +1,6 @@
 .burger-menu {
   background-color: cornflowerblue;
-  width: 95%;
+  // width: 95%;
   cursor: pointer;
   position: relative;
   z-index: 1;
@@ -82,29 +82,7 @@ color: red;
   margin-left: 1%;
 }
 
-// @media (min-width: 768px) {
-//   .menu-link{
-//     font-size: 27px;
-//     padding-left: 25%;
-//   } 
-//   .sub-menu {
-//     top:16%;
-//     left:47%
-//   }
-//   .default-menu{
-//     top: 16% !important;
-//     left: 47% !important;
-//   }
-//   .spanServices,.burger-symbol{
-//     margin-left: 50px;
-//     margin-right: 50px;
-//     font-size: 30px;
-//   }
-//   .sub-menu-item{
-//     font-size: 22px !important;
-//     padding: 2.5px !important;
-//   }
-// }
+
 .menu-link:hover{
   color: #575757;
 }
@@ -182,6 +160,9 @@ color: red;
   .sub-menu-item{
     font-size: 16px !important;
     padding: 1px !important;
+  }
+  .burger-menu {
+    width: 90%;
   }
 }
 
