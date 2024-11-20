@@ -7,12 +7,15 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
+    
   },
   "dependencies": {
     "mongoose": "^8.7.3",
     "next": "14.2.15",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sass": "^1.81.0",
+    "sharp": "^0.33.5"
   },
   "devDependencies": {
     "eslint": "^8",
