@@ -68,60 +68,69 @@ const BurgerMenu = () => {
   };
   
 
-  const getSubMenuItems = (menu) => {
-    const withLogo = (text) => (
-      <div className={styles['sub-menu-item']}>
-        <Image src={logo1} alt="logo" width={20} height={20} className={styles['logo-image']} />
-        <span className={styles['text-span']}>{text}</span>
-      </div>
-    );
+  // const getSubMenuItems = (menu) => {
+  //   const withLogo = (text) => (
+  //     <div className={styles['sub-menu-item']}>
+  //       <Image src={logo1} alt="logo" width={20} height={20} className={styles['logo-image']} />
+  //       <span className={styles['text-span']}>{text}</span>
+  //     </div>
+  //   );
 
-    
+  const getSubMenuItems = (menu) => {
+    const withLogo = (text, href) => (
+      <Link href={href} passHref key={text}>
+        <div className={styles['sub-menu-item']}>
+          <Image src={logo1} alt="logo" width={20} height={20} className={styles['logo-image']} />
+          <span className={styles['text-span']}>{text}</span>
+        </div>
+      </Link>
+    );
+  
 
     switch (menu) {
       case 'disinsection':
         return [
-          withLogo(currentLanguage === 'ua' ? 'Знищення тарганів.' : 'Уничтожение тараканов.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення клопів.' : 'Уничтожение клопов.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення мурах.' : 'Уничтожение муравьев.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення бліх.' : 'Уничтожение блох.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення кліщів.' : 'Уничтожение клещей.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення мух.' : 'Уничтожение мух.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення молі.' : 'Уничтожение моли.'),
-          withLogo(currentLanguage === 'ua' ? 'Дезінсекція підвалів.' : 'Дезинсекция подвалов.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення павуків.' : 'Уничтожение пауков.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення термітів.' : 'Уничтожение термитов.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення короїда.' : 'Уничтожение короедов.')
-        ];
-      case 'disinfection':
-        return [
-          withLogo(currentLanguage === 'ua' ? 'Боротьба з грибком та цвіллю.' : 'Борьба с грибком и плесенью.'),
-          withLogo(currentLanguage === 'ua' ? 'Боротьба з вірусами та мікробами.' : 'Борьба с вирусами и микробами.'),
-          withLogo(currentLanguage === 'ua' ? 'Обробка після туберкульозу.' : 'Обработка после туберкулеза.'),
-          withLogo(currentLanguage === 'ua' ? 'Обробка від коронавірусу.' : 'Обработка от коронавируса.'),
-          withLogo(currentLanguage === 'ua' ? 'Дезінфекція підвалу.' : 'Дезинфекция подвала.')
-        ];
-      case 'deratization':
-        return [
-          withLogo(currentLanguage === 'ua' ? 'Знищення мишей.' : 'Уничтожение мышей.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення щурів.' : 'Уничтожение крыс.'),
-          withLogo(currentLanguage === 'ua' ? 'Знищення кротів.' : 'Уничтожение кротов.')
-        ];
-      case 'dezodoration':
-        return [
-          withLogo(currentLanguage === 'ua' ? 'Запах в авто.' : 'Запах в автомобиле.'),
-          withLogo(currentLanguage === 'ua' ? 'Запах тютюну, прокуренності.' : 'Запах табака, прокуренности.'),
-          withLogo(currentLanguage === 'ua' ? 'Запах після пожежі.' : 'Запах после пожара.'),
-          withLogo(currentLanguage === 'ua' ? 'Трупний запах.' : 'Трупный запах.'),
-          withLogo(currentLanguage === 'ua' ? 'Запах тварин.' : 'Запах животных.'),
-          withLogo(currentLanguage === 'ua' ? 'Запах після ремонту.' : 'Запах после ремонта.'),
-          withLogo(currentLanguage === 'ua' ? 'Запах вогкості, грибка.' : 'Запах сырости, плесени.')
-        ];
-      case 'fymigaz':
-        return [
-          withLogo(currentLanguage === 'ua' ? 'Фумігація складов.' : 'Фумигация складов.'),
-          withLogo(currentLanguage === 'ua' ? 'Фумігація зерна, зерносховищ.' : 'Фумигация зерна, зернохранилищ.'),
-          withLogo(currentLanguage === 'ua' ? 'Фумігація дерев’яних будинків.' : 'Фумигация деревянных домов.')
+          withLogo(currentLanguage === 'ua' ? 'Знищення тарганів.' : 'Уничтожение тараканов.','/disinsection'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення клопів.' : 'Уничтожение клопов.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення мурах.' : 'Уничтожение муравьев.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення бліх.' : 'Уничтожение блох.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення кліщів.' : 'Уничтожение клещей.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення мух.' : 'Уничтожение мух.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення молі.' : 'Уничтожение моли.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Дезінсекція підвалів.' : 'Дезинсекция подвалов.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення павуків.' : 'Уничтожение пауков.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення термітів.' : 'Уничтожение термитов.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення короїда.' : 'Уничтожение короедов.')
+      //   ];
+      // case 'disinfection':
+      //   return [
+      //     withLogo(currentLanguage === 'ua' ? 'Боротьба з грибком та цвіллю.' : 'Борьба с грибком и плесенью.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Боротьба з вірусами та мікробами.' : 'Борьба с вирусами и микробами.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Обробка після туберкульозу.' : 'Обработка после туберкулеза.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Обробка від коронавірусу.' : 'Обработка от коронавируса.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Дезінфекція підвалу.' : 'Дезинфекция подвала.')
+      //   ];
+      // case 'deratization':
+      //   return [
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення мишей.' : 'Уничтожение мышей.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення щурів.' : 'Уничтожение крыс.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Знищення кротів.' : 'Уничтожение кротов.')
+      //   ];
+      // case 'dezodoration':
+      //   return [
+      //     withLogo(currentLanguage === 'ua' ? 'Запах в авто.' : 'Запах в автомобиле.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Запах тютюну, прокуренності.' : 'Запах табака, прокуренности.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Запах після пожежі.' : 'Запах после пожара.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Трупний запах.' : 'Трупный запах.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Запах тварин.' : 'Запах животных.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Запах після ремонту.' : 'Запах после ремонта.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Запах вогкості, грибка.' : 'Запах сырости, плесени.')
+      //   ];
+      // case 'fymigaz':
+      //   return [
+      //     withLogo(currentLanguage === 'ua' ? 'Фумігація складов.' : 'Фумигация складов.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Фумігація зерна, зерносховищ.' : 'Фумигация зерна, зернохранилищ.'),
+      //     withLogo(currentLanguage === 'ua' ? 'Фумігація дерев’яних будинків.' : 'Фумигация деревянных домов.')
         ];
 
         case 'pricing':
