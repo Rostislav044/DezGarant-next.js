@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-    
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "mongodb": "4.1",
     "mongoose": "^8.7.3",
     "next": "14.2.15",
     "react": "^18",
