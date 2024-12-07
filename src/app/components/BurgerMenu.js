@@ -1,7 +1,9 @@
 
 
 
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
+import { usePathname } from 'next/navigation';
+
 import Image from 'next/image';
 import logo1 from '@/app/public/Tick.svg';
 import { useLanguage } from '@/app/LanguageContext';
@@ -14,6 +16,7 @@ const translations = {
   deratization: { ru: 'Дератизация', ua: 'Дератизація' },
   dezodoration: { ru: 'Дезодорация', ua: 'Дезодорація' },
   fymigaz: { ru: 'Фумигация', ua: 'Фумігація' },
+  
   pricing: { ru: 'Стоимость услуг', ua: 'Вартість послуг' },
   contact: { ru: 'Контакты', ua: 'Контакти' },
 };
@@ -34,6 +37,7 @@ const BurgerMenu = () => {
   const { currentLanguage } = useLanguage();
   const menuRef = useRef(null);
   
+
   const [phoneClicked, setPhoneClicked] = useState(false);
   
    
@@ -41,9 +45,26 @@ const BurgerMenu = () => {
   
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
-  const handleMenuClick = (menu) => {
-    setActiveSubMenu(activeSubMenu === menu ? null : menu);
-  };
+  // const handleMenuClick = (menu) => {
+  //   setActiveSubMenu(activeSubMenu === menu ? null : menu);
+  // };
+
+  
+
+
+
+const handleMenuClick = (menu) => {
+  if (menu === 'pricing') {
+    // Предотвращаем срабатывание подменю
+    setActiveSubMenu(null);
+    window.location.href = '/price';
+    return; // Останавливаем дальнейший код
+  }
+  setActiveSubMenu(activeSubMenu === menu ? null : menu);
+};
+
+  
+  
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -68,13 +89,7 @@ const BurgerMenu = () => {
   };
   
 
-  // const getSubMenuItems = (menu) => {
-  //   const withLogo = (text) => (
-  //     <div className={styles['sub-menu-item']}>
-  //       <Image src={logo1} alt="logo" width={20} height={20} className={styles['logo-image']} />
-  //       <span className={styles['text-span']}>{text}</span>
-  //     </div>
-  //   );
+  
 
   const getSubMenuItems = (menu) => {
     const withLogo = (text, href) => (
@@ -91,105 +106,106 @@ const BurgerMenu = () => {
       case 'disinsection':
         return [
           withLogo(currentLanguage === 'ua' ? 'Знищення тарганів.' : 'Уничтожение тараканов.','/disinsection'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення клопів.' : 'Уничтожение клопов.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення мурах.' : 'Уничтожение муравьев.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення бліх.' : 'Уничтожение блох.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення кліщів.' : 'Уничтожение клещей.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення мух.' : 'Уничтожение мух.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення молі.' : 'Уничтожение моли.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Дезінсекція підвалів.' : 'Дезинсекция подвалов.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення павуків.' : 'Уничтожение пауков.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення термітів.' : 'Уничтожение термитов.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення короїда.' : 'Уничтожение короедов.')
-      //   ];
-      // case 'disinfection':
-      //   return [
-      //     withLogo(currentLanguage === 'ua' ? 'Боротьба з грибком та цвіллю.' : 'Борьба с грибком и плесенью.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Боротьба з вірусами та мікробами.' : 'Борьба с вирусами и микробами.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Обробка після туберкульозу.' : 'Обработка после туберкулеза.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Обробка від коронавірусу.' : 'Обработка от коронавируса.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Дезінфекція підвалу.' : 'Дезинфекция подвала.')
-      //   ];
-      // case 'deratization':
-      //   return [
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення мишей.' : 'Уничтожение мышей.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення щурів.' : 'Уничтожение крыс.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Знищення кротів.' : 'Уничтожение кротов.')
-      //   ];
-      // case 'dezodoration':
-      //   return [
-      //     withLogo(currentLanguage === 'ua' ? 'Запах в авто.' : 'Запах в автомобиле.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Запах тютюну, прокуренності.' : 'Запах табака, прокуренности.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Запах після пожежі.' : 'Запах после пожара.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Трупний запах.' : 'Трупный запах.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Запах тварин.' : 'Запах животных.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Запах після ремонту.' : 'Запах после ремонта.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Запах вогкості, грибка.' : 'Запах сырости, плесени.')
-      //   ];
-      // case 'fymigaz':
-      //   return [
-      //     withLogo(currentLanguage === 'ua' ? 'Фумігація складов.' : 'Фумигация складов.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Фумігація зерна, зерносховищ.' : 'Фумигация зерна, зернохранилищ.'),
-      //     withLogo(currentLanguage === 'ua' ? 'Фумігація дерев’яних будинків.' : 'Фумигация деревянных домов.')
+          withLogo(currentLanguage === 'ua' ? 'Знищення клопів.' : 'Уничтожение клопов.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення мурах.' : 'Уничтожение муравьев.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення бліх.' : 'Уничтожение блох.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення кліщів.' : 'Уничтожение клещей.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення мух.' : 'Уничтожение мух.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення молі.' : 'Уничтожение моли.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Дезінсекція підвалів.' : 'Дезинсекция подвалов.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення павуків.' : 'Уничтожение пауков.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення термітів.' : 'Уничтожение термитов.','/disinsection'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення короїда.' : 'Уничтожение короедов.','/disinsection')
+        ];
+      case 'disinfection':
+        return [
+          withLogo(currentLanguage === 'ua' ? 'Боротьба з грибком та цвіллю.' : 'Борьба с грибком и плесенью.','/disinfection'),
+          withLogo(currentLanguage === 'ua' ? 'Боротьба з вірусами та мікробами.' : 'Борьба с вирусами и микробами.','/disinfection'),
+          withLogo(currentLanguage === 'ua' ? 'Обробка після туберкульозу.' : 'Обработка после туберкулеза.','/disinfection'),
+          withLogo(currentLanguage === 'ua' ? 'Обробка від коронавірусу.' : 'Обработка от коронавируса.','/disinfection'),
+          withLogo(currentLanguage === 'ua' ? 'Дезінфекція підвалу.' : 'Дезинфекция подвала.','/disinfection')
+        ];
+      case 'deratization':
+        return [
+          withLogo(currentLanguage === 'ua' ? 'Знищення мишей.' : 'Уничтожение мышей.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення щурів.' : 'Уничтожение крыс.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Знищення кротів.' : 'Уничтожение кротов.','deratization')
+        ];
+      case 'dezodoration':
+        return [
+          withLogo(currentLanguage === 'ua' ? 'Запах в авто.' : 'Запах в автомобиле.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Запах тютюну, прокуренності.' : 'Запах табака, прокуренности.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Запах після пожежі.' : 'Запах после пожара.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Трупний запах.' : 'Трупный запах.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Запах тварин.' : 'Запах животных.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Запах після ремонту.' : 'Запах после ремонта.','deratization'),
+          withLogo(currentLanguage === 'ua' ? 'Запах вогкості, грибка.' : 'Запах сырости, плесени.','deratization')
+        ];
+      case 'fymigaz':
+        return [
+          withLogo(currentLanguage === 'ua' ? 'Фумігація складов.' : 'Фумигация складов.','fumigatsiya'),
+          withLogo(currentLanguage === 'ua' ? 'Фумігація зерна, зерносховищ.' : 'Фумигация зерна, зернохранилищ.','fumigatsiya'),
+          withLogo(currentLanguage === 'ua' ? 'Фумігація дерев’яних будинків.' : 'Фумигация деревянных домов.','fumigatsiya')
         ];
 
-        case 'pricing':
-          return [
+        
+          
+          // return [
 
 
             
-            currentLanguage  === 'ua'
-              ? 'Позбавимо від шкідників!'
-              : 'Избавим от вредителей!',
+          //   currentLanguage  === 'ua'
+          //     ? 'Позбавимо від шкідників!'
+          //     : 'Избавим от вредителей!',
              
 
   
-            <div 
-            key="pricing-1" 
-            className={styles['sub-menu-item']}>
-              <Image src={logo1} alt="logo" width={20} height={20} />
-              <span className={styles['text-span']}>
-                {currentLanguage === 'ua'
-                  ? ' Обробка квартир '
-                  : 'Обработка  квартир '}
-              </span>
-              <span className={styles['red-text1']}>
-                {currentLanguage === 'ua' ? 'від:' : 'от:'}
-              </span>
-              <span className={styles['red-text']}>1000 грн.</span>
-            </div>,
-            <div 
-            key="pricing-2" 
-            className={styles['sub-menu-item']}>
-              <Image src={logo1} alt="logo" width={20} height={20}  />
-              <span className={styles['text-span']}>
-                {currentLanguage === 'ua'
-                  ? 'Обробка для підприємств '
-                  : 'Обработка для предприятий '}
-              </span>
-              <span className={styles['red-text1']}>
-                {currentLanguage === 'ua' ? 'від:' : 'от:'}
-              </span>
-              <span className={styles['red-text']}>1500 грн.</span>
-            </div>,
-            <div 
-            key="pricing-3" 
-            className={styles['sub-menu-item']}>
-              <Image src={logo1} alt="logo" width={20} height={20} />
-              <span className={styles['text-span']}>
-                {currentLanguage === 'ua'
-                  ? 'Обробка земельних ділянок '
-                  : 'Обработка земельных участков '}
-              </span>
-              <span className={styles['red-text1']}>
-                {currentLanguage === 'ua' ? 'від:' : 'от:'}
-              </span>
-              <span className={styles['red-text']}>2000 грн.</span>
-            </div>,
+          //   <div 
+          //   key="pricing-1" 
+          //   className={styles['sub-menu-item']}>
+          //     <Image src={logo1} alt="logo" width={20} height={20} />
+          //     <span className={styles['text-span']}>
+          //       {currentLanguage === 'ua'
+          //         ? ' Обробка квартир '
+          //         : 'Обработка  квартир '}
+          //     </span>
+          //     <span className={styles['red-text1']}>
+          //       {currentLanguage === 'ua' ? 'від:' : 'от:'}
+          //     </span>
+          //     <span className={styles['red-text']}>1000 грн.</span>
+          //   </div>,
+          //   <div 
+          //   key="pricing-2" 
+          //   className={styles['sub-menu-item']}>
+          //     <Image src={logo1} alt="logo" width={20} height={20}  />
+          //     <span className={styles['text-span']}>
+          //       {currentLanguage === 'ua'
+          //         ? 'Обробка для підприємств '
+          //         : 'Обработка для предприятий '}
+          //     </span>
+          //     <span className={styles['red-text1']}>
+          //       {currentLanguage === 'ua' ? 'від:' : 'от:'}
+          //     </span>
+          //     <span className={styles['red-text']}>1500 грн.</span>
+          //   </div>,
+          //   <div 
+          //   key="pricing-3" 
+          //   className={styles['sub-menu-item']}>
+          //     <Image src={logo1} alt="logo" width={20} height={20} />
+          //     <span className={styles['text-span']}>
+          //       {currentLanguage === 'ua'
+          //         ? 'Обробка земельних ділянок '
+          //         : 'Обработка земельных участков '}
+          //     </span>
+          //     <span className={styles['red-text1']}>
+          //       {currentLanguage === 'ua' ? 'від:' : 'от:'}
+          //     </span>
+          //     <span className={styles['red-text']}>2000 грн.</span>
+          //   </div>,
             
-          ];
+          // ];
 
-
+          
 
 
         

@@ -10,7 +10,7 @@ import styles from '../../src/app/styles/PageStyles.module.scss';
 export default function Layout({ children }) {
   
   return (
-    <html lang="en">
+    <html lang="ua">
       <body className={styles.divContainer}>
         <LanguageProvider>
           
