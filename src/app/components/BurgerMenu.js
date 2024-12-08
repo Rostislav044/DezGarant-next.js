@@ -45,10 +45,7 @@ const BurgerMenu = () => {
   
   const toggleMenu = () => setMenuOpen((prev) => !prev);
 
-  // const handleMenuClick = (menu) => {
-  //   setActiveSubMenu(activeSubMenu === menu ? null : menu);
-  // };
-
+  
   
 
 
@@ -149,61 +146,7 @@ const handleMenuClick = (menu) => {
         ];
 
         
-          
-          // return [
-
-
-            
-          //   currentLanguage  === 'ua'
-          //     ? 'Позбавимо від шкідників!'
-          //     : 'Избавим от вредителей!',
-             
-
-  
-          //   <div 
-          //   key="pricing-1" 
-          //   className={styles['sub-menu-item']}>
-          //     <Image src={logo1} alt="logo" width={20} height={20} />
-          //     <span className={styles['text-span']}>
-          //       {currentLanguage === 'ua'
-          //         ? ' Обробка квартир '
-          //         : 'Обработка  квартир '}
-          //     </span>
-          //     <span className={styles['red-text1']}>
-          //       {currentLanguage === 'ua' ? 'від:' : 'от:'}
-          //     </span>
-          //     <span className={styles['red-text']}>1000 грн.</span>
-          //   </div>,
-          //   <div 
-          //   key="pricing-2" 
-          //   className={styles['sub-menu-item']}>
-          //     <Image src={logo1} alt="logo" width={20} height={20}  />
-          //     <span className={styles['text-span']}>
-          //       {currentLanguage === 'ua'
-          //         ? 'Обробка для підприємств '
-          //         : 'Обработка для предприятий '}
-          //     </span>
-          //     <span className={styles['red-text1']}>
-          //       {currentLanguage === 'ua' ? 'від:' : 'от:'}
-          //     </span>
-          //     <span className={styles['red-text']}>1500 грн.</span>
-          //   </div>,
-          //   <div 
-          //   key="pricing-3" 
-          //   className={styles['sub-menu-item']}>
-          //     <Image src={logo1} alt="logo" width={20} height={20} />
-          //     <span className={styles['text-span']}>
-          //       {currentLanguage === 'ua'
-          //         ? 'Обробка земельних ділянок '
-          //         : 'Обработка земельных участков '}
-          //     </span>
-          //     <span className={styles['red-text1']}>
-          //       {currentLanguage === 'ua' ? 'від:' : 'от:'}
-          //     </span>
-          //     <span className={styles['red-text']}>2000 грн.</span>
-          //   </div>,
-            
-          // ];
+    
 
           
 
