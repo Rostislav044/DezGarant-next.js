@@ -1,0 +1,153 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap");
+.img1 {
+  width: 50px;
+  height: 50px;
+}
+
+.footerLogoText {
+  font-size: 15px;
+  margin-left: 5px;
+  margin-top: 10px;
+  font-family: "Lato", sans-serif;
+}
+
+.footerDivContainer {
+  display: flex;
+  flex-direction: column;
+  background: cornflowerblue;
+  width: 98.8%;
+  margin: 0;
+}
+
+.footerTopRow {
+  display: flex;
+  justify-content: space-between; /* Размещает элементы по сторонам */
+  width: 100%;
+  padding: 5px;
+}
+
+.footerDivLogo {
+  display: flex;
+  cursor: pointer;
+}
+
+.footerLogoDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}
+
+.footerDivServices {
+  background: #ffeb3b;
+  padding-left: 10px;
+}
+
+.img1 {
+  width: 60px;
+  height: 60px;
+}
+
+.footerDivServicesP {
+  color: blue;
+  font-size: 18px;
+  font-family: "Lato", sans-serif;
+  text-decoration: none;
+}
+
+.footerDivServicesSpan {
+  font-size: 16px;
+  color: black;
+  font-family: "Lato", sans-serif;
+}
+
+.footerLogoTextSpan2 {
+  display: flex;
+  text-align: center;
+  color: white;
+  margin-top: -10px;
+  font-family: "Lato", sans-serif;
+}
+
+.footerLogoTextSpan1 {
+  color: black;
+  font-size: 20px;
+  font-family: "Lato", sans-serif;
+}
+
+.footerLogoTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.footerLogoText1 {
+  font-size: 15px;
+  margin: 0;
+  width: -moz-max-content;
+  width: max-content;
+  margin-top: -10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.footerLogoText2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #ff4500; /* Акцентный цвет для "Гарант" */
+}
+@media (min-width: 320px) {
+  .footerLogoText2 {
+    font-size: 20px;
+    margin-left: 3%;
+    text-transform: none;
+    background: linear-gradient(45deg, #ff4500, #ff9c00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .img1 {
+    width: 80px;
+    height: 80px;
+  }
+  .footerLogoText1 {
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+  }
+  .footerLogoText2 {
+    font-size: 20px;
+  }
+  .footerLogoTextSpan2 {
+    font-size: 24px;
+  }
+  .footerDivServicesP {
+    font-size: 20px;
+  }
+  .footerDivServicesSpan {
+    font-size: 18px;
+  }
+}
+.footerLogoTextCom {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+@media (min-width: 1024px) {
+  .footerDivServicesP {
+    font-size: 24px;
+  }
+  .footerLogoTextSpan2 {
+    font-size: 30px;
+  }
+  .footerLogoText1 {
+    font-size: 16px;
+    font-family: "Lato", sans-serif;
+  }
+  .footerLogoText2 {
+    font-size: 24px;
+  }
+}/*# sourceMappingURL=Footer.module.css.map */

@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+.pService {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: blue;
+  font-family: "Lato", sans-serif;
+  background: white;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+.serviceSpan {
+  color: red;
+  margin: 0 5px 0 5px;
+  font-size: 20px;
+}
+
+.serviceImgGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  background: white;
+  padding-bottom: 20px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.grid-photo {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.grid-item p {
+  font-size: 16px;
+}
+
+@media (min-width: 768px) {
+  .grid-photo {
+    border: 1px solid;
+    border-radius: 10px;
+  }
+  .pService {
+    font-size: 24px;
+    line-height: 45px;
+  }
+  .serviceSpan {
+    font-size: 24px;
+  }
+  .serviceImgGrid {
+    padding-top: 3% !important;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto !important;
+  }
+  .gridPhoto {
+    width: 125px !important;
+    height: 125px !important;
+  }
+  .p {
+    font-size: 16px;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-photo {
+    border: 1px solid;
+    border-radius: 10px;
+  }
+  .pService {
+    font-size: 32px;
+    line-height: 65px;
+  }
+  .serviceSpan {
+    font-size: 32px;
+  }
+  .serviceImgGrid {
+    padding-top: 3% !important;
+    gap: 100px !important;
+    width: 700px;
+    height: 600px;
+    margin: 0 auto !important;
+  }
+  .gridPhoto {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  .p {
+    font-size: 20px;
+  }
+}/*# sourceMappingURL=Service.module.css.map */

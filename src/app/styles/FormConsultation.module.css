@@ -1,0 +1,118 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&display=swap");
+.formContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.consultationForm {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 4px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.label {
+  margin-top: 10px;
+  display: block;
+}
+
+.input, .textarea {
+  width: 96%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid cornflowerblue;
+  border-radius: 5px;
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.inputFocus:hover {
+  color: blue;
+  border: 2px solid gold;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* добавляем легкое свечение */
+}
+
+.formContainer .textarea:hover {
+  color: blue;
+  border: 2px solid gold;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5); /* добавляем легкое свечение */
+}
+
+.submitBtn {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+  display: block;
+  margin-top: 5px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modalContent {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modalButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .consultationForm {
+    width: 50%;
+  }
+}/*# sourceMappingURL=FormConsultation.module.css.map */

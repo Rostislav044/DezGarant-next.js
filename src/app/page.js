@@ -19,7 +19,8 @@ export default function Page() {
   useEffect(()=>{
     async function fetchPosts() {
     try {
-      const response = await fetch('http://localhost:3001/posts/');
+      // const response = await fetch('http://localhost:3001/posts/');
+      const response =await fetch ('https://dezgarant-next-js.onrender.com');
       if (!response.ok) {
         throw new Error('Failed to fetch posts');
       }
