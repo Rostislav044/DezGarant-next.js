@@ -36,8 +36,8 @@ export default function BlogSection() {
       // const res = await fetch("http://localhost:3001/posts/", 
       const res =await fetch ('https://dezgarant-next-js.onrender.com',
       {
-        // method: "POST",
-        method: 'GET',
+        method: "POST",
+        // method: 'GET',
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, content }),
       });
