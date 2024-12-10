@@ -1,6 +1,8 @@
 
 "use client";
 import { useState, useEffect } from "react";
+const cors = require('cors');
+app.use(cors());
 
 export default function BlogSection() {
   const [posts, setPosts] = useState([]);
