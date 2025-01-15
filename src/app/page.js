@@ -17,6 +17,7 @@ import styles from '@/app/globals.scss';
 // import FormConsultation "@/app/components/FormConsultation";
 import BlogSection from "./components/BlogSection";
 export default function Page() {
+<<<<<<< HEAD
   useEffect(()=>{
     async function fetchPosts() {
     try {
@@ -33,6 +34,24 @@ export default function Page() {
   }
   fetchPosts();
   },[])
+=======
+  // useEffect(()=>{
+  //   async function fetchPosts() {
+  //   try {
+  //     const response = await fetch('http://localhost:3001/posts/');
+  //     // const response =await fetch ('https://dezgarant-next-js.onrender.com');
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch posts');
+  //     }
+  //     const posts = await response.json();
+  //     console.log(posts);
+  //   } catch (error) {
+  //     console.error(error.message);
+  //   }
+  // }
+  // fetchPosts();
+  // },[])
+>>>>>>> 5e2d7a66302ab81ad5e6b155e9a3b7352f209ff3
   return (
     <div>
       <Head>
@@ -47,8 +66,9 @@ export default function Page() {
       <Section2/>
       <Section3/>
       <Reviews/>
-      <Footer/>
       <BlogSection />
+      <Footer/>
+     
     </div>
 
     
