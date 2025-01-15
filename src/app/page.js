@@ -18,6 +18,7 @@ import styles from '@/app/globals.scss';
 import BlogSection from "./components/BlogSection";
 export default function Page() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   useEffect(()=>{
     async function fetchPosts() {
     try {
@@ -52,6 +53,9 @@ export default function Page() {
   // fetchPosts();
   // },[])
 >>>>>>> 5e2d7a66302ab81ad5e6b155e9a3b7352f209ff3
+=======
+
+>>>>>>> a6e8496822e1dbc28ec9639464f65f22d459ed47
   return (
     <div>
       <Head>
