@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import Head from "next/head"; // Импортируем Head для установки метаданных
@@ -19,8 +20,8 @@ export default function Page() {
   useEffect(()=>{
     async function fetchPosts() {
     try {
-      // const response = await fetch('http://localhost:3001/posts/');
-      const response =await fetch ('https://dezgarant-next-js.onrender.com');
+      const response = await fetch('http://localhost:3001/posts/');
+      // const response =await fetch ('https://dezgarant-next-js.onrender.com');
       if (!response.ok) {
         throw new Error('Failed to fetch posts');
       }

@@ -1,8 +1,8 @@
 
 "use client";
+
 import { useState, useEffect } from "react";
-const cors = require('cors');
-app.use(cors());
+
 
 export default function BlogSection() {
   const [posts, setPosts] = useState([]);
@@ -13,8 +13,8 @@ export default function BlogSection() {
   useEffect(() => {
     async function fetchPosts() {
       try {
-        // const response = await fetch("http://localhost:3001/posts/");
-        const response =await fetch ('https://dezgarant-next-js.onrender.com');
+        const response = await fetch('http://localhost:3001/posts/');
+        // const response =await fetch ('https://dezgarant-next-js.onrender.com');
         if (!response.ok) {
           throw new Error("Failed to fetch posts");
         }
@@ -33,8 +33,8 @@ export default function BlogSection() {
     e.preventDefault();
 
     try {
-      // const res = await fetch("http://localhost:3001/posts/", 
-      const res =await fetch ('https://dezgarant-next-js.onrender.com',
+      const res = await fetch('http://localhost:3001/posts/', 
+      // const res =await fetch ('https://dezgarant-next-js.onrender.com',
       {
         method: "POST",
         // method: 'GET',
@@ -91,3 +91,5 @@ export default function BlogSection() {
     </section>
   );
 }
+
+
